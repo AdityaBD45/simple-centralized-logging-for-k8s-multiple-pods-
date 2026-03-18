@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / temp
+dist/
+build/
+tmp/
+
+# Docker
+.dockerignore
+
+# Kubernetes (optional if you generate later)
+*.yaml
+*.yml
+
+# IDE
+.vscode/
+.idea/
