@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-logging-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-logging-app
+  template:
+    metadata:
+      labels:
+        app: k8s-logging-app
+    spec:
+      containers:
+        - name: app
+          image: adityabd/k8s-logging-app:v1
+          ports:
+            - containerPort: 3000

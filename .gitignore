@@ -21,9 +21,7 @@ tmp/
 # Docker
 .dockerignore
 
-# Kubernetes (optional if you generate later)
-*.yaml
-*.yml
+
 
 # IDE
 .vscode/
