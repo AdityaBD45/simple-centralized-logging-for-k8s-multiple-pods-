@@ -16,4 +16,3 @@ data:
 
     output.elasticsearch:
       hosts: ["http://elasticsearch.logging.svc.cluster.local:9200"]
-      index: "filebeat-%{+yyyy.MM.dd}"
