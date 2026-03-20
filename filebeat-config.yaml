@@ -13,9 +13,7 @@ data:
     processors:
       - add_kubernetes_metadata:
           host: ${NODE_NAME}
-          matchers:
-            - logs_path:
-                logs_path: "/var/log/containers/"
 
     output.elasticsearch:
-      hosts: ["http://elasticsearch-service.default.svc.cluster.local:9200"]
+      hosts: ["http://elasticsearch.logging.svc.cluster.local:9200"]
+      index: "filebeat-%{+yyyy.MM.dd}"

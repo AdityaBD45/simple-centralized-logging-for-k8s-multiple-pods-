@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-logging-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-logging-app
+  template:
+    metadata:
+      labels:
+        app: k8s-logging-app
+    spec:
+      containers:
+        - name: app
+          image: adityabd/k8s-logging-app:v1
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-logging-service
+spec:
+  type: NodePort
+  selector:
+    app: k8s-logging-app
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30007
